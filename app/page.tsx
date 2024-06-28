@@ -1,9 +1,31 @@
+import Link from "next/link";
+import Worker from "./(component)/Worker";
 
-export default function Home() {
+interface Worker {
+  id: string;
+  name: string;
+  squareImage: string;
+  industries: string[];
+  netWorth: number;
+}
 
+const URL = "https://billions-api.nomadcoders.workers.dev/";
 
-    <main className="w-full min-h-full">
-      hello
+export const metadata = {
+  title: "Home"
+};
+
+async function getWorkerList() {
+  const response = await fetch(URL);
+  const json = await response.json();
+  return json;
+}
+
+export default async function Home() {
+  const workerList: Worker[] = await getWorkerList();
+
+  return (
+    <main className="w-[1280px] min-h-full flex flex-wrap">
     </main>
   );
 }
