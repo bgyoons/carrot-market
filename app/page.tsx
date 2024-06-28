@@ -26,6 +26,13 @@ export default async function Home() {
 
   return (
     <main className="w-[1280px] min-h-full flex flex-wrap">
+      {workerList.slice(0, 50).map(worker => {
+        const name = worker.name.toLowerCase().replace(" ", "-");
+        return (<Link key={worker.id} href={`person/${name}`}>
+          <Worker worker={worker} />
+        </Link>);
+      }
+      )}
     </main>
   );
 }
