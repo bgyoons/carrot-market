@@ -1,11 +1,20 @@
+import Button from "@/component/Button";
+import Input from "@/component/input";
+
 export const metadata = {
-  title: "Home"
+  title: "Log in"
 };
 
 
 export default function Home() {
   return (
-    <main className="w-[1280px] min-h-full flex">
+    <main className="h-full flex flex-col w-80 m-auto justify-center *:font-medium">
+      <form className="flex flex-col w-full" action="">
+        <Input type="email" placeholder="Email" required errors={[]} />
+        <Input type="text" placeholder="Username" required errors={[]} />
+        <Input type="password" placeholder="Password" required errors={[]} />
+        <Button text="Log in" loading={true} />
+      </form>
     </main>
   );
 }
