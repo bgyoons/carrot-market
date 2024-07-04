@@ -1,8 +1,9 @@
 "use client";
 
+import { useFormState } from "react-dom";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import { useFormState } from "react-dom";
+import Success from "@/components/Success";
 import { handleForm } from "./actions";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <Input name="username" type="text" placeholder="Username" required />
         <Input name="password" type="password" placeholder="Password" required error={state?.error} />
         <Button text="Log in" />
+        {state?.status === "success" && <Success />}
       </form>
     </main>
   );
