@@ -17,12 +17,12 @@ export default function Input({
     <div>
       <input
         name={name}
-        className="w-full outline-none focus:ring-2 ring-1 focus:ring-indigo-300 ring-slate-300 py-2 px-4 mb-3 rounded-full"
+        className="w-full outline-none focus:ring-2 ring-1 focus:ring-indigo-300 ring-slate-300 py-2 px-4 rounded-full"
         type={type}
         placeholder={placeholder}
         required={required}
       />
-      <span className="text-red-500 text-sm pl-4 pb-3">{errors}</span>
+      <span className="text-red-500 text-sm pl-4 mt-1">{error}</span>
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main className="h-full flex flex-col w-80 m-auto justify-center *:font-medium">
-      <form className="flex flex-col w-full" action={dispatch}>
+      <form className="flex flex-col w-full gap-3" action={dispatch}>
         <Input name="email" type="email" placeholder="Email" required />
         <Input name="username" type="text" placeholder="Username" required />
         <Input name="password" type="password" placeholder="Password" required error={state?.error} />
