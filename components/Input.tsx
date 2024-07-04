@@ -3,7 +3,7 @@ interface InputProps {
   type: string,
   name: string,
   required: boolean,
-  errors: string[];
+  error?: string;
 }
 
 export default function Input({
@@ -11,7 +11,7 @@ export default function Input({
   placeholder,
   name,
   required,
-  errors
+  error
 }: InputProps) {
   return (
     <div>

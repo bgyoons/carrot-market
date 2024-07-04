@@ -10,10 +10,10 @@ export default function Home() {
 
   return (
     <main className="h-full flex flex-col w-80 m-auto justify-center *:font-medium">
-        <Input name="email" type="email" placeholder="Email" required errors={[]} />
-        <Input name="username" type="text" placeholder="Username" required errors={[]} />
-        <Input name="password" type="password" placeholder="Password" required errors={[]} />
       <form className="flex flex-col w-full" action={dispatch}>
+        <Input name="email" type="email" placeholder="Email" required />
+        <Input name="username" type="text" placeholder="Username" required />
+        <Input name="password" type="password" placeholder="Password" required error={state?.error} />
         <Button text="Log in" />
       </form>
     </main>
