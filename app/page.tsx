@@ -1,5 +1,5 @@
 import Button from "@/component/Button";
-import Input from "@/component/input";
+import Input from "@/component/Input";
 
 export const metadata = {
   title: "Log in"
