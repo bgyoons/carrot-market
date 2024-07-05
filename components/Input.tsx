@@ -3,7 +3,7 @@ interface InputProps {
   type: string,
   name: string,
   required: boolean,
-  error?: string;
+  error: string[] | undefined;
 }
 
 export default function Input({
@@ -22,7 +22,7 @@ export default function Input({
         placeholder={placeholder}
         required={required}
       />
-      <span className="text-red-500 text-sm pl-4 mt-1">{error}</span>
+      {error?.map((err) => <div key={err} className="text-red-500 text-sm pl-4 mt-1">{err}</div>)}
     </div>
   );
 }
