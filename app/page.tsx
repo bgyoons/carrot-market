@@ -12,11 +12,29 @@ export default function Home() {
   return (
     <main className="h-full flex flex-col w-80 m-auto justify-center *:font-medium">
       <form className="flex flex-col w-full gap-3" action={dispatch}>
-        <Input name="email" type="email" placeholder="Email" required />
-        <Input name="username" type="text" placeholder="Username" required />
-        <Input name="password" type="password" placeholder="Password" required error={state?.error} />
+        <Input
+          name="email"
+          type="email"
+          placeholder="Email"
+          required
+          error={state?.error?.fieldErrors.email}
+        />
+        <Input
+          name="username"
+          type="text"
+          placeholder="Username"
+          required
+          error={state?.error?.fieldErrors.username}
+        />
+        <Input
+          name="password"
+          type="password"
+          placeholder="Password"
+          required
+          error={state?.error?.fieldErrors.password}
+        />
         <Button text="Log in" />
-        {state?.status === "success" && <Success />}
+        {state?.success && <Success />}
       </form>
     </main>
   );
